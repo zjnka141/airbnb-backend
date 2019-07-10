@@ -26,6 +26,7 @@ CREATE TABLE `accounts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(45) COLLATE utf8_bin NOT NULL,
   `password` varchar(45) COLLATE utf8_bin NOT NULL,
+  `full_name` varchar(45) COLLATE utf8_bin NOT NULL,
   `age` int(11) DEFAULT NULL,
   `gender` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `address` varchar(45) COLLATE utf8_bin DEFAULT NULL,
