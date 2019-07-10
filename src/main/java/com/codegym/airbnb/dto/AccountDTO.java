@@ -1,5 +1,7 @@
 package com.codegym.airbnb.dto;
 
+import com.codegym.airbnb.validation.Unique;
+
 import java.io.Serializable;
 
 public class AccountDTO implements Serializable {
@@ -10,6 +12,7 @@ public class AccountDTO implements Serializable {
     private String phone;
     private String email;
     private String address;
+    @Unique(message = "username is already exit")
     private String username;
     private String password;
     private Boolean deleted;
