@@ -9,5 +9,7 @@ public interface AccountService {
 
     List<Account> findAllByDeletedIsFalse();
 
-    void save(AccountDTO acoountDTO);
+    void save(AccountDTO accountDTO);
+    AccountDTO findById(Integer id);
+    void update(AccountDTO accountDTO);
 }
