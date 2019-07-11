@@ -8,4 +8,5 @@ import java.util.List;
 public interface AccountRepository extends JpaRepository<Account,Integer> {
     List<Account> findAllByDeletedIsFalse();
     Long countByUsername(String username);
+    Account findByUsernameAndDeletedIsFalse(String s);
 }
