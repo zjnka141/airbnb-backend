@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.security.Principal;
 
 @RestController
+@CrossOrigin
 public class AppController {
     @Autowired
     AuthenticationManager authenticationManager;
@@ -32,10 +33,14 @@ public class AppController {
         return new ResponseEntity<>("Welcome admin to my website", HttpStatus.OK);
     }
     @GetMapping("/operator/test")
-    public ResponseEntity<?> sayUser() {
+    public ResponseEntity<?> sayOperator() {
         return new ResponseEntity<>("Welcome operator to my website", HttpStatus.OK);
     }
-
+    @GetMapping("/user")
+    public ResponseEntity<?> sayUser(Principal principal) {
+        Principal a= principal;
+        return new ResponseEntity<>("Welcome user to my website", HttpStatus.OK);
+    }
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Account user) {
         Authentication authentication = authenticationManager.authenticate(
