@@ -26,12 +26,12 @@ public class AccountController {
     }
 
     @GetMapping("/accounts/{id}")
-    public ResponseEntity<?> getAccountById(@PathVariable(value = "id") Integer id) {
+    public ResponseEntity<AccountDTO> getAccountById(@PathVariable(value = "id") Integer id) {
         AccountDTO accountDTO = accountService.findById(id);
         return ResponseEntity.ok().body(accountDTO);
     }
     @PutMapping("accounts/{id}")
-    public ResponseEntity<?> updateAccount(@PathVariable(value = "id") Integer id,@RequestBody AccountDTO accountDTO){
+    public ResponseEntity<AccountDTO> updateAccount(@PathVariable(value = "id") Integer id,@RequestBody AccountDTO accountDTO){
         accountService.update(accountDTO);
         return ResponseEntity.ok(accountDTO);
     }
